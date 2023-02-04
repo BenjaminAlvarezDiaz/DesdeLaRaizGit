@@ -33,12 +33,12 @@ public class PlayerController : MonoBehaviour
 
         //rg.velocity = Vector3.SmoothDamp(rg.velocity, new Vector2(inputX, -fallAceleration), ref velocity, motionSmoothing);
         transform.Translate(inputX * Time.deltaTime, inputY * Time.deltaTime, 0f);
-        /*if(Input.GetButton("Jump") && !isJumping){
+        if(Input.GetButton("Jump") && !isJumping){
             Debug.Log("Salto");
             //transform.Translate(0f, Input.GetAxis("Jump") * Time.deltaTime * jumpImpulse, 0f);
-            //rg.AddForce(Vector2.up * Input.GetAxis("Jump") * jumpImpulse, ForceMode.Impulse);
+            rg.AddForce(Vector2.up * Input.GetAxis("Jump") * jumpImpulse, ForceMode.Impulse);
             isJumping = true;
-        }*/
+        }
     }
 
     private void OnCollisionEnter(Collision other){
